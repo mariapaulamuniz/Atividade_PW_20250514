@@ -5,6 +5,7 @@ import uvicorn
 
 from data import produto_repo
 from data import cliente_repo
+from data import categoria_repo
 
 
 app = FastAPI()
@@ -31,9 +32,14 @@ async def get_clientes():
 @app.get("/Produtos")
 async def get_clientes():
     produtos = cliente_repo.obter_todos()
-    response = templates.TemplateResponse("clientes.html", {"request": {}, "clientes": produtos})
+    response = templates.TemplateResponse("produtos.html", {"request": {}, "produtos": produtos})
     return response
 
+@app.get("/Categoria")
+async def get_clientes():
+    categoria = cliente_repo.obter_todos()
+    response = templates.TemplateResponse("categoria.html", {"request": {}, "categoria": categoria})
+    return response
 
 if __name__ == "__main__":
     uvicorn.run(app="main:app", host="127.0.0.1", port=8000, reload=True)
