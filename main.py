@@ -22,10 +22,16 @@ async def get_root():
     return response
 
 
-@app.get("/clientes")
+@app.get("/Clientes")
 async def get_clientes():
     clientes = cliente_repo.obter_todos()
     response = templates.TemplateResponse("clientes.html", {"request": {}, "clientes": clientes})
+    return response
+
+@app.get("/Produtos")
+async def get_clientes():
+    produtos = cliente_repo.obter_todos()
+    response = templates.TemplateResponse("clientes.html", {"request": {}, "clientes": produtos})
     return response
 
 
