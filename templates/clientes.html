@@ -29,13 +29,13 @@
                 </tr>
             </thead>
             <tbody> 
-                {% for cliente in clientes %}
+                {% for c in clientes %}
                 <tr>
-                    <td>{{cliente.id}}</td>
-                    <td>{{cliente.nome}}</td>
-                    <td>{{cliente.cpf}}</td>
-                    <td>{{cliente.email}}</td>
-                    <td>{{cliente.telefone}}</td>
+                    <td>{{c.id}}</td>
+                    <td>{{c.nome}}</td>
+                    <td>{{c.cpf}}</td>
+                    <td>{{c.email}}</td>
+                    <td>{{c.telefone}}</td>
                 </tr>
                 {% endfor %}
             </tbody>
